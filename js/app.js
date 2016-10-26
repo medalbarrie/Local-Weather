@@ -2,7 +2,7 @@ var img = [
     'url("img/veryHot.jpg")',
     'url("img/hot.jpg")',
      'url("img/winter.jpg")',
-     'url("img/freezing.jpg")',
+     'url("img/freezing.jpg")'
 ]
 
 var units = 'imperial';
@@ -67,4 +67,33 @@ var mainHtml = '<img src="https://openweathermap.org/img/w/' + code +
 
 };
 
+// Background Image For weather condition
 
+
+function setBackground(temperature, temperatureArr) {
+    if(temp >= tempArr[0]) {
+        $('body').css('background-image', imgs[0]); 
+    }else if (temp < temperatureArr[0] && temperature >= temperatureArr[1]) {
+        $('body').css('background-image', img[1]);
+
+    }else if (temperature < temperatureArr[1] && temperature >= temperatureArr[2]) {
+        $('body').css('background-image', img[2]);
+
+    }else if (temperature < temperatureArr[2]) {
+        $('body').css('background-image', img[3]); 
+    }
+};
+
+function prepBackground(temperatureUnit) {
+    var temperatureArr;
+    switch(temperatureUnit) {
+        case 'F': 
+          temperatureArr = [90, 70, 32];
+          break;
+          case 'C': 
+           temperatureArr = [32, 21, 0];
+           break;
+    }
+
+    return temperatureArr;
+}
