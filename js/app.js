@@ -96,4 +96,18 @@ function prepBackground(temperatureUnit) {
     }
 
     return temperatureArr;
+};
+
+function CallWeatherAPI() {
+     var url =getUrl(newWeatherCorrdinates.latiude, newWeatherCorrdinates.longitude, units);
+     $.getJSON(url, getWeather);
 }
+
+function start() {
+    findLocation();
+    CallWeatherAPI();
+}
+
+
+$('input[type=radio][name=fareniheit-celcius]').change(Unit);
+$(document).ready(findLocation);
