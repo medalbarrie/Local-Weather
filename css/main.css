@@ -1,13 +1,16 @@
+body {
+    background-color: #444;
+}
 h2 {
     text-align: center;
     font-family: 'open sans', sans-serif;
-    color: #663333;
+    color: #fefefe;
 }
 
 h1 {
     font-size: 52px;
     text-align: center;
-    color: #663333;
+    color: #fefefe;
    font-family: 'open sans', sans-serif;
 }
 
